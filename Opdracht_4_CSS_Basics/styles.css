@@ -1,0 +1,57 @@
+body{
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: black;
+}
+
+.black-border{
+    border: 5px solid black;
+
+}
+
+#green-background{
+    background-color: green;
+    color: rgb(53, 51, 51);
+}
+
+nav{
+    background-color: blue;
+}
+
+ul{
+    background-color: red;
+    line-height: 3em;
+    font-family: cursive;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+li p{
+    color: white;
+    border: 3px white solid;
+   
+}
+
+
+
+p:hover{
+    color: blue;
+}
+
+li{
+
+    border: 1px solid black;
+}
+
+.main-title{
+    line-height: 3em;
+    color: black;
+}
