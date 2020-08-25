@@ -1,5 +1,4 @@
-readme test file 1
-edited 24-08 2057
+Rishaan
 
-
-edit 2059
+fullstack winc academy opleiding. 
+https://www.wincacademy.nl/
