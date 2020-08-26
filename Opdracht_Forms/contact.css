@@ -1,0 +1,15 @@
+body{
+    background-color: lightblue;
+}
+
+label, input, textarea, footer{
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+
+}
+footer{
+   
+    margin-top: 500px;
+}
