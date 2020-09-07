@@ -1,0 +1,223 @@
+
+$footer-text-color: white;
+$header-text-color: rgb(117, 117, 117);
+$card-top-radius: 25px;
+
+
+
+body{
+    background-color:  #c3cfe2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /*Geen flauw idee welk font wordt gebruikt..*/
+    font-size: 14px;
+    margin:0;
+}
+
+// CARD Opdracht BEGIN
+
+a{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    width: 440px;
+    height: 560px;
+    margin:50px auto;
+    box-sizing: border-box;
+    border-top-left-radius: $card-top-radius;
+    border-top-right-radius: $card-top-radius;                      
+    border-bottom-left-radius: $card-top-radius;
+    border-bottom-right-radius: $card-top-radius;
+    background-color: white;
+    box-shadow: 1px 15px 20px grey;
+    
+  
+
+
+&__header{
+    height: 65%;
+
+ 
+    
+}
+
+&__img{
+    background-image: url("/Winc_Opdrachten/Opdracht_17_Eindopdracht_CSS/images/what-your-favorite-stock-photo-spaghetti-person-s-2-7471-1432142821-2_dblbig.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    top: -70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px; 
+    height: 130px;
+    border: 5px solid white;
+    border-radius: 100%;
+    }
+
+&__text{
+    color: $header-text-color;
+    padding: 50px 40px;
+   
+    
+}
+
+&__name{
+    text-transform: uppercase;
+    color: $footer-text-color;
+    text-align: center;
+    position: relative;
+    top: 25px;
+}
+&__site{
+    @extend .card__name;
+    font-size:0.8rem;
+    opacity: 50%;
+    position: relative;
+    top: 15px;
+}
+
+&__footer{
+    background-color:#686de0;
+    padding: 50px 40px;
+    border-bottom-left-radius: $card-top-radius;
+    border-bottom-right-radius: $card-top-radius;
+}
+}
+// CARD Opdracht EINDE
+
+
+
+// GRID RESPONSIVe Opdracht START
+
+
+
+.grid{
+    box-sizing: border-box;
+    width:80%;
+    display: grid;
+    grid-auto-rows: 300px ;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-gap: 5px;
+    margin: 0 auto;
+
+&__img{
+    display:flex;
+   } 
+
+&__img:hover button{
+    opacity: 1;
+    
+   
+}     
+
+
+& > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-property:opacity;
+    transition-duration: 750ms;
+    }
+
+&__img--hover:hover{
+    
+    opacity: 0%;
+    }
+    
+
+}
+
+button{
+    
+    align-self: center;
+    position: relative;
+    right: 55%;
+    opacity: 0;
+    transition-property:opacity;
+    transition-duration: 750ms;
+}
+
+.button:hover img{
+    opacity: 20%;
+}
+
+
+
+@media (max-width: 800px){
+    .grid{
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}    
+@media (max-width: 480px){
+    .grid{
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
+
+
+// GRID RESPONSIVe Opdracht Einde
+
+
+
+
+
+
+// BEGIN OPDRACHT 3 MEDIA BUTTONS
+body,html,section{ 
+    height: 100%;
+    
+}
+
+.media-buttons{
+    height: 100%;
+    color:white;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+
+
+&> div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 270px;
+    height: 50px;
+    transform:translateX(200px);
+    transition: transform 200ms ease-in 0ms;
+    }
+& > div > p{
+    margin-right: 100px;
+}
+
+&__blog{
+    background-color: #e17b77;
+}
+
+&__twitter{
+    background-color: #00aced;
+}
+
+&__facebook{
+    background-color: #3b5998;
+}
+
+&__github{
+    background-color:#333;
+}
+
+&__linkedin{
+    background-color:#007bb6;
+}
+
+& > div:hover{
+    transform: translateX(100px);
+   
+    }
+}
+
+// EINDE OPDRACHT 3 MEDIA BUTTONS
