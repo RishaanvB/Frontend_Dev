@@ -1,12 +1,14 @@
-body {
+.site-container {
+  /*Ik heb in dit geval body, html en section dezelfde class gegeven, omdat ze in  dit geval allemaal dezelfde height hebben en die in dit geval niet worden veranderd. Anders hadden ze verschillende classes gekregen*/
   background-color: #c3cfe2;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   /*Geen flauw idee welk font wordt gebruikt..*/
   font-size: 14px;
   margin: 0;
+  height: 100%;
 }
 
-a {
+.nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +37,7 @@ a {
 }
 
 .card__img {
-  background-image: url("/Winc_Opdrachten/Opdracht_17_Eindopdracht_CSS/images/what-your-favorite-stock-photo-spaghetti-person-s-2-7471-1432142821-2_dblbig.jpg");
+  background-image: url("./images/what-your-favorite-stock-photo-spaghetti-person-s-2-7471-1432142821-2_dblbig.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -77,7 +79,7 @@ a {
   border-bottom-right-radius: 25px;
 }
 
-.grid {
+.flex-grid {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 80%;
@@ -90,17 +92,38 @@ a {
   margin: 0 auto;
 }
 
-.grid__img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.container {
+  width: 100%;
+  height: 100%;
 }
 
-.grid__img:hover button {
+.container__button {
+  position: relative;
+  left: 40%;
+  bottom: 50%;
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 750ms;
+          transition-duration: 750ms;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  /* ^^ toegevoegd om te voorkomen dat de hover buiten de img aan de rechterkant werd geactiveerd */
+}
+
+.container:hover .container__img--hover {
+  opacity: 0.1;
+}
+
+.container:hover .container__button--hover {
   opacity: 1;
 }
 
-.grid > div > img {
+.container__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -111,46 +134,22 @@ a {
           transition-duration: 750ms;
 }
 
-.grid__img--hover:hover {
-  opacity: 0%;
-}
-
-button {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  position: relative;
-  right: 55%;
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 750ms;
-          transition-duration: 750ms;
-}
-
-.button:hover img {
-  opacity: 20%;
-}
-
 @media (max-width: 800px) {
-  .grid {
+  .flex-grid {
     -ms-grid-columns: (minmax(200px, 1fr))[2];
         grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
-  .grid {
+@media (max-width: 600px) {
+  /* Heb de max-width iets groter gemaakt anders werden de fotos te small */
+  .flex-grid {
     -ms-grid-columns: (minmax(200px, 1fr))[1];
         grid-template-columns: repeat(1, minmax(200px, 1fr));
   }
 }
 
-body, html, section {
-  height: 100%;
-}
-
-.media-buttons {
+.nav-media {
   height: 100%;
   color: white;
   display: -webkit-box;
@@ -169,7 +168,7 @@ body, html, section {
   overflow: hidden;
 }
 
-.media-buttons > div {
+.nav-media__icons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,31 +187,31 @@ body, html, section {
   transition: transform 200ms ease-in 0ms, -webkit-transform 200ms ease-in 0ms;
 }
 
-.media-buttons > div > p {
+.nav-media__text {
   margin-right: 100px;
 }
 
-.media-buttons__blog {
+.nav-media--color-blog {
   background-color: #e17b77;
 }
 
-.media-buttons__twitter {
+.nav-media--color-twitter {
   background-color: #00aced;
 }
 
-.media-buttons__facebook {
+.nav-media--color-facebook {
   background-color: #3b5998;
 }
 
-.media-buttons__github {
+.nav-media--color-github {
   background-color: #333;
 }
 
-.media-buttons__linkedin {
+.nav-media--color-linkedin {
   background-color: #007bb6;
 }
 
-.media-buttons > div:hover {
+.nav-media--slide:hover {
   -webkit-transform: translateX(100px);
           transform: translateX(100px);
 }
